@@ -13,9 +13,16 @@ export const Person = (props: Person) => {
   const toggleInfo = () => {
     setShowInfo((prev) => !prev);
   };
+
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setPersonBio(event.target.value);
   };
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    //the event: React.FormEvent<HTMLFormElement> is used to forms submit
+    event.preventDefault();
+  };
+
   return (
     <div>
       {isShowInfo && (
