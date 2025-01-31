@@ -75,3 +75,34 @@ let colors: string[]=['orange', 'pink', 'purple']
 //colors.push(true)
 let mixedArray:(number|string)[]=[83,'old',2,'young']
 //mixedArray.push(true)
+console.log(temperatures, colors, mixedArray)
+
+
+//--------------------------------------------------------------------
+
+// Objects
+let car: {brand:string; year:number;} = {brand: 'toyota', year: 2023}
+car.brand = "MG"
+console.log(car)
+
+let book = {title: "FantasticLand", cost: 20}
+let pen = {title: "fabercastel", cost: 10}
+let notebook = {title: "capricho"}
+let item: {title: string; cost?: number}[] = [book, pen, notebook]
+console.log(item)
+// Challenge
+// Create an object bike of type { brand: string, year: number } and assign it some values. Then, try to assign a string to the year property.
+// Create an object laptop of type { brand: string, year: number } and try to assign an object with missing year property to it.
+// Create an array products of type { title: string, price?: number }[] and assign it some values. Then, try to add an object with a price property of type string to it.
+let bike: { brand: string; year: number } = {brand: "Caloy", year:2022}
+console.log(bike);
+let laptop:{ brand: string; year?: number } = {brand:"mac"}
+console.log(laptop);
+let itemOne = { title: "cream", price: 23}
+let itemTwo = { title: "toner", price: 43}
+let products:{ title: string; price?: number }[] = [itemOne, itemTwo, { title: "cream", price: 23}]
+products.push({title:'shoes'})
+console.log(products)
+
+//--------------------------------------------------------------------
+
