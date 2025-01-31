@@ -1,4 +1,4 @@
-//Types
+//VARIABLE TYPES
 
 let name: string = "Priscila"
 name = "other"
@@ -28,7 +28,7 @@ console.log(!isValid ? "is true" : "is false")
 
 //--------------------------------------------------------------------
 
-//Union type
+//UNION TYPE
 let tax:number | string = 10
 tax = "$11"
 let requestStatus: 'pending'|'success'|'error' = "pending"
@@ -58,7 +58,7 @@ discount= '20%'
 
 //--------------------------------------------------------------------
 
-// Arrays
+// ARRAY
 let prices: number[] = [100, 72, 83, 76]
 prices.push(67)
 let fruits: string[] = ['apple', 'pineapple', 'strawberry']
@@ -80,7 +80,7 @@ console.log(temperatures, colors, mixedArray)
 
 //--------------------------------------------------------------------
 
-// Objects
+// OBJECT
 let car: {brand:string; year:number;} = {brand: 'toyota', year: 2023}
 car.brand = "MG"
 console.log(car)
@@ -106,3 +106,46 @@ console.log(products)
 
 //--------------------------------------------------------------------
 
+//FUNCTIONS
+function sayHi(name: string){
+    console.log(`Hello to ${name.toUpperCase()}`)
+}
+sayHi("maria")
+
+function calculateDiscount(price:number):number{
+    const hasDiscount = true;
+    if(hasDiscount){
+        return price;
+    }
+    return price * 0.9;
+}
+const finalPrice = calculateDiscount(200)
+console.log(finalPrice);
+// Challenge
+// Create a new array of names.
+// Write a new function that checks if a name is in your array. This function should take a name as a parameter and return a boolean.
+// Use this function to check if various names are in your array and log the results.
+const arrayOfName: string[] = ['Priscila', 'carlos', 'Jane']
+
+function checkArray(name:string):boolean{
+   return arrayOfName.includes(name)
+}
+let newName = 'carlos'
+if(checkArray(newName)){
+    console.log(`${newName} is in the list`);
+}else{
+    console.log(`${newName} is not in the list`);
+}
+
+function calculatePrice(price:number, discount?:number):number{
+    return price - (discount || 0)
+}
+
+let priceAfterDiscount = calculatePrice(100, 20)
+
+function calculateScore(initialScore: number, penaltyPoints: number = 0){
+    return initialScore - penaltyPoints
+}
+
+let scoreAfterPenalty = calculateScore(100, 20)
+let scoreWithoutPenalty = calculateScore(100)
