@@ -435,4 +435,21 @@ interface Booking {
  // Also inside the interface, define any methods that the object should have. In this case, we have upgradeRam, which is a function that takes a number and returns a number.
  // Now that we have our interface, we can create an object that adheres to this interface. This object should have all the properties defined in the interface (except for optional ones, which are... optional), and the methods should be implemented.
  // Finally, we can use our object. We can call its upgradeRam method to increase its RAM.
- 
+  interface Computer {
+    readonly id:number; 
+    brand:string; 
+    ram:number; 
+    storage?:number;
+    upgradeRam(value:number):number
+  }
+
+  let newComputer:Computer = {
+    id:123,
+    brand:"Apple",
+    ram:8, 
+    upgradeRam(value){
+        this.ram += value;
+        return this.ram
+    }
+  }
+  console.log(newComputer.upgradeRam(256))
