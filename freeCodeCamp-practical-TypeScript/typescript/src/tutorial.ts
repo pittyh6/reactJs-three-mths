@@ -326,3 +326,31 @@ discount: 0.15,
 };
 
 //TYPE ALIAS - COMPUTED PROPERTIES
+const propName = 'age';
+
+type Animal = {
+[propName]: number;
+};
+
+let tiger: Animal = { [propName]: 5 };
+
+//INTERFACE - FUNDAMENETALS
+interface Books {
+    readonly isbn: number;
+    title: string;
+    author: string;
+    genre?: string;
+}
+    
+const deepWork: Books = {
+    isbn: 9781455586691,
+    title: 'Deep Work',
+    author: 'Cal Newport',
+    genre: 'Self-help',
+};
+    
+deepWork.title = 'New Title'; // allowed
+// deepWork.isbn = 654321; // not allowed
+    
+    
+//INTERFACE METHOD

@@ -496,6 +496,7 @@ type Animal = {
 };
 
 let tiger: Animal = { [propName]: 5 };
+
 Interface - Fundamentals
 allow to setup shape for objects (only objects)
 interface Book {
