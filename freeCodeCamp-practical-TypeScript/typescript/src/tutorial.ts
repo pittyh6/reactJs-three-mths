@@ -453,3 +453,76 @@ interface Booking {
     }
   }
   console.log(newComputer.upgradeRam(256))
+ 
+ 
+ 
+  // Interface - Merging, Extend, TypeGuard
+interface Person {
+name: string;
+getDetails(): string;
+}
+
+interface DogOwner {
+dogName: string;
+getDogDetails(): string;
+}
+
+// Merging (reopening) an interface in TypeScript is a process where you declare an interface with the same name more than once, and TypeScript will merge their members.
+
+// Merging the interface
+interface Person {
+age: number;
+}
+
+// Usage
+const person: Person = {
+name: 'John',
+age: 30,
+getDetails() {
+return `Name: ${this.name}, Age: ${this.age}`;
+},
+};
+
+// Extending an interface in TypeScript is a way to create a new interface that inherits the properties and methods of an existing interface. You use the extends keyword to do this. When you extend an interface, the new interface will have all the members of the base interface, plus any new members that you add.
+
+// Extending the interface
+interface Employees extends Person {
+employeeId: number;
+}
+
+const employee: Employees = {
+name: 'jane',
+age: 28,
+employeeId: 123,
+getDetails() {
+return `Name: ${this.name}, Age: ${this.age}, Employee ID: ${this.employeeId}`;
+},
+};
+
+// Interface multiple inheritance
+interface Managers extends Person, DogOwner {
+managePeople(): void;
+}
+
+const manager: Managers = {
+name: 'Bob',
+age: 35,
+dogName: 'Rex',
+getDetails() {
+return `Name: ${this.name}, Age: ${this.age}`;
+},
+getDogDetails() {
+return `Dog Name: ${this.dogName}`;
+},
+managePeople() {
+console.log('Managing people...');
+},
+};
+// Challenge - Part 1
+// Define the Person interface Start by defining a Person interface with a name property of type string.
+// Define the DogOwner interface Next, define a DogOwner interface that extends Person and adds a dogName property of type string.
+// Define the Manager interface Then, define a Manager interface that extends Person and adds two methods: managePeople and delegateTasks. Both methods should have a return type of void.
+// Define the getEmployee function Now, define a function called getEmployee that returns a Person, DogOwner, or Manager. Inside this function, generate a random number and use it to decide which type of object to return. If the number is less than 0.33, return a Person. If it's less than 0.66, return a DogOwner. Otherwise, return a Manager.
+// Finally, create a variable called employee that can be a Person, DogOwner, or Manager, and assign it the return value of getEmployee. Then, log employee to the console.
+
+ 

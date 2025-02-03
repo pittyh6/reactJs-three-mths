@@ -620,6 +620,7 @@ laptop.storage = 256; // assigning value to optional property
 
 console.log(laptop.upgradeRam(4)); // upgrades RAM by 4GB
 console.log(laptop);
+
 Interface - Merging, Extend, TypeGuard
 interface Person {
 name: string;
